@@ -1,15 +1,10 @@
 # tools
 ## version
-xxx
-
-# command
-## new
-`wasm-pack new <name> --template <template> --mode <normal|noinstall|force>`
-default template is `rustwasm/wasm-pack-template`
-default mode is `normal`, `noinstall` means that wasm-pack should not attempt to install any underlying tools. If a necessary tool cannot be found, the command will error. `force` means that wasm-pack should not check the local Rust version. If a local Rust is an unacceptable Rust version, the command will error.
-
-
-
+wasm-pack: 0.12.1
+npm: 8.5.1
+wasm-bindgen: 0.2.84
+bevy: 0.13.0
+webpack: 4.29.3
 
 # steps
 ## create wasm project
@@ -19,9 +14,11 @@ default mode is `normal`, `noinstall` means that wasm-pack should not attempt to
 1. cd my-game; wasm-pack build --out-dir pkg-bundler --target bundler
 2. cd pkg-bundler; npm link; cd ..
 
-## create http project
-1. npm init wasm-app www-wasm-app; cd www-wasm-app; 
-2. npm link my-game;
-3. npm install --save @wasm-tool/wasm-pack-plugin
-4. npm run start -- --port 9000 --host 192.168.95.33
+## create http project & link local 'my-game'
+1. npm init wasm-app www-wasm-app; 
+2. cd www-wasm-app; npm link my-game;
+
+## start
+1. cd www-wasm-app;
+2. npm run start -- --port 9000 --host 192.168.95.33
 
