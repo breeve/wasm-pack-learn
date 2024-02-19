@@ -30,4 +30,5 @@ opt-level = "s"
 [workspace]
 resolver = "2"
 
-
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false

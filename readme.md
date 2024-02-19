@@ -22,3 +22,9 @@ webpack: 4.29.3
 1. cd www-wasm-app;
 2. npm run start -- --port 9000 --host 192.168.95.33
 
+# build option
+`export RUST_LOG=info` enable build log, like these
+```
+RUST_LOG=info wasm-pack build --out-dir pkg-bundler --target bundler
+```
+valid values: `off,error,warn,info,debug`

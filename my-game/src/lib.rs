@@ -1,8 +1,15 @@
 use bevy::prelude::*;
 use wasm_bindgen::prelude::*;
 
+mod breakout;
+
 #[wasm_bindgen]
 pub fn run() {
+    // animation_run()
+    breakout::breakout_run()
+}
+
+fn animation_run() {
     App::new()
         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest())) // prevents blurry sprites
         .add_systems(Startup, setup)
